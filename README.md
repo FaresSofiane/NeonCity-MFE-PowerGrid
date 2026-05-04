@@ -1,1 +1,1 @@
-# NeonCity-MFE-PowerGrid
+# NeonCity-MFE-PowerGrid - Equipe 3
