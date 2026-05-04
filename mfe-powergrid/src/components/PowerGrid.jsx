@@ -155,21 +155,31 @@ export default function PowerGrid() {
 
   const indicatorColor = (status) => {
     switch (status) {
-      case "orange": return "#ff8800";
-      case "red": return "#ff003c";
-      case "black": return "#222";
-      case "love": return "#00ff88";
-      default: return "#00ff88";
+      case "orange":
+        return "#ff8800";
+      case "red":
+        return "#ff003c";
+      case "black":
+        return "#222";
+      case "love":
+        return "#00ff88";
+      default:
+        return "#00ff88";
     }
   };
 
   const zoneClass = (status) => {
     switch (status) {
-      case "orange": return "zone zone-warning";
-      case "red": return "zone zone-critical";
-      case "black": return "zone zone-offline";
-      case "love": return "zone zone-love";
-      default: return "zone zone-online";
+      case "orange":
+        return "zone zone-warning";
+      case "red":
+        return "zone zone-critical";
+      case "black":
+        return "zone zone-offline";
+      case "love":
+        return "zone zone-love";
+      default:
+        return "zone zone-online";
     }
   };
 
@@ -184,64 +194,6 @@ export default function PowerGrid() {
       <div className="grid-header">
         <span className="grid-title">POWER GRID</span>
         <span className="city-power">CITY POWER: {cityPower}%</span>
-      </div>
-
-      <div className="simulate-row">
-        <button
-          className="simulate-btn"
-          type="button"
-          onClick={() =>
-            eventBus.emit("weather:change", {
-              condition: "storm",
-              intensity: 50,
-              temperature: 10,
-              toxicity: 30,
-            })
-          }
-        >
-          WEATHER 50
-        </button>
-        <button
-          className="simulate-btn"
-          type="button"
-          onClick={() =>
-            eventBus.emit("weather:change", {
-              condition: "acid",
-              intensity: 80,
-              temperature: -5,
-              toxicity: 60,
-            })
-          }
-        >
-          WEATHER 80
-        </button>
-        <button
-          className="simulate-btn"
-          type="button"
-          onClick={() =>
-            eventBus.emit("hacker:command", { command: "blackout", level: 2 })
-          }
-        >
-          BLACKOUT
-        </button>
-        <button
-          className="simulate-btn"
-          type="button"
-          onClick={() =>
-            eventBus.emit("hacker:command", { command: "love", level: 1 })
-          }
-        >
-          LOVE
-        </button>
-        <button
-          className="simulate-btn"
-          type="button"
-          onClick={() =>
-            eventBus.emit("hacker:command", { command: "reset", level: 0 })
-          }
-        >
-          RESET
-        </button>
       </div>
 
       <div className="power-bar-track">
